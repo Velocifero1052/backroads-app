@@ -1,5 +1,6 @@
 import Title from "./Title";
 import {services} from "../data";
+import Service from "./Service";
 
 function Services(){
     return (
@@ -10,13 +11,7 @@ function Services(){
             <div className="section-center services-center">
                 {
                     services.map((item) => (
-                        <article key={item.id} className="service">
-                            <span className="service-icon"><i className={item.icon}></i></span>
-                            <div className="service-info">
-                                <h4 className="service-title">{item.title}</h4>
-                                <p className="service-text">{item.text}</p>
-                            </div>
-                        </article>))
+                        <Service key={item.id} icon={item.icon} title={item.title} text={item.text} />))
                 }
             </div>
         </section>
