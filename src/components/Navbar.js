@@ -1,6 +1,7 @@
 import logo from '../images/logo.svg';
-import {pageLinks, socialLinks} from '../data';
+import {socialLinks} from '../data';
 import PageLinks from '../components/PageLinks';
+import SocialLink from "./SocialLink";
 
 function Navbar(){
     return (
@@ -17,11 +18,7 @@ function Navbar(){
                     {socialLinks.map((link) => {
                         const {id, href, icon} = link;
                         return (
-                            <li key={id}>
-                                <a href={href} target={'_blank'} className={'nav-icon'}>
-                                    <i className={icon}></i>
-                                </a>
-                            </li>
+                            <SocialLink key={id} className={'nav-icon'} href={href} icon={icon}/>
                         );
                     })}
                 </ul>
